@@ -1,14 +1,87 @@
 table {
-    width: 50%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: left;
-  }
-  th {
-    background-color: #f0f0f0;
-  }
-  (/*tabellen sin stil skal være her*/)
+  width: 50%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+
+
+/*farge og oppsett desing for tabel skal være her*/
+
+.geo {
+  background-color: rgb(95, 239, 95);
+}
+
+.R1 {
+  background-color: rgb(85, 185, 222);
+}
+
+.IT1 {
+  background-color: rgb(246, 214, 2);
+}
+
+.Historie {
+  background-color: rgb(232, 113, 16);
+}
+
+.ferdig {
+  background-color: rgb(90, 90, 90);
+}
+
+.fysikk {
+  background-color: rgb(27, 6, 148);
+}
+
+.Norsk {
+  background-color: #f52020;
+}
+.lunsj{
+  background-image:linear-gradient(to right,  rgb(43, 0, 255), rgb(255, 115, 0));
+}
+.ing{ 
+  background-color: orange;
+}
+body{
+  background-image: url("gammel\ tavle.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.Klassens{
+  background-color: chocolate;
+}
+.krop{
+  background-color: yellow;
+}
+.tid1{
+background-color: #33ff00;
+}
+.tid2{
+background-color: #33ff00;
+}
+.tid3{
+background-color: #33ff00;
+}
+.tid4{
+background-color: #33ff00;
+}
+.tid5{
+  background-color: #33ff00;
+}
+.tid6{
+  background-color: #33ff00;
+}
+h1{
+  color: #FF3131;
+}
