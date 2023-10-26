@@ -1,0 +1,38 @@
+.olympiske-ringer {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 7px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+}
+
+.blå {
+    border-color: blue;
+    left: 660px;
+    top: 325px;
+}
+
+.gul {
+    border-color: yellow;
+    left: 703px;
+    top: 370px;
+}
+
+.svart {
+    border-color: black;
+    left: 740px;
+    top: 325px;
+}
+
+.grønn {
+    border-color: green;
+    left: 788px;
+    top: 370px;
+}
+
+.rød {
+    border-color: red;
+    left: 820px;
+    top: 325px;
+}
