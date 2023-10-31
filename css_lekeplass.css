@@ -1,0 +1,41 @@
+body{
+    margin: 15px;
+    padding: 20px;
+    border: #1b211f;
+    background-image: linear-gradient(to bottom right, rgb(154, 234, 26), rgb(219, 84, 69));
+    font-family: "Lato", sans-serif
+    text-align: center;
+}
+p{
+    color: #1b211f;
+    font-size: large;
+}
+
+p.sitat{
+    border-left: 4px solid #0d1466;
+    padding-left: 15px;
+
+
+    
+
+}
+#lekeplass{ 
+    border-image: linear-gradient(#0b2dc4, #4d9f0c) 30;
+    border-width: 4px;
+    border-style: solid;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+h1{
+    text-align: center;
+
+}
+div:nth-child(4)
+{
+    padding: 20px;
+    margin: 18px;
+    border: solid black;
+    border-radius: 5px;
+    text-align: center;
+}

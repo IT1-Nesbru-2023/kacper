@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjett passordet</title>
+</head>
+
+<body>
+    <style>
+        h1{
+            margin-left: 650px;
+        }
+        p{
+            margin-left: 650px;
+        }
+    </style>
+    <script>
+        // Be brukeren om å oppgi passord
+        var passordRiktig = "Kacper"
+        var passord = prompt("gjett passordet");
+        if (passord == passordRiktig) {
+            // Skriv ut passordet
+            document.write("riktig");
+        }
+        else if (passord == "?lengde") {
+            document.write("lengde på passord = " + passordRiktig.length)
+        }
+        else if (passord == "?1") {
+            document.write("første tegnet i passordet=" + passordRiktig[0])
+        }
+        else if (passord == "?2") {
+            document.write("Andre tegn i passordet=" + passordRiktig[1])
+        }
+        else if (passord == "?siste") {
+            document.write("siste tegn i passordet=" + passordRiktig.substring(2,6))
+        }
+        else if(passord == "?store") {
+            document.write("Riktig passord med bare store tegn=" + passordRiktig.toUpperCase());
+        }
+        else if(passord == "?små"){
+            document.write("riktig passord med små tegn=" + passordRiktig.toLowerCase());
+        }
+        else {
+            document.write("feil passord")
+        }
+    </script>
+   <h1>Hjelpe middler</h1>
+    <p>Skriv ?lengde for å vite lengden på passordet</p>
+    <p>Skriv ?1 for første tegn i passordet</p>
+    <p>skriv ?2 for andre tegn i passordet</p>
+   <p>skriv ?siste for å få den siste tegnet i passordet</p> 
+   <p>skriv ?store for å få Riktig passord med bare store tegn</p>
+   <p>skriv ?små for også få riktig passord med store tegn</p>
+</body>
+
+</html>
