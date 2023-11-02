@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tilfeldige tall</title>
+</head>
+
+<body>
+    <script>
+        let tall = Math.ceil(Math.random() * 20);
+        document.write(tall)
+        if (tall <= 6) {
+            document.write("du fikk 6 eller mindre")
+        }
+        else if(tall >6 && tall < 18){
+            document.write("du fikk mellom 6 og 18")
+        }
+        else if(tall >=18){
+            document.write("du fikk 18 eller mer")
+        }
+        if(tall == 13){
+            document.write("du fikk 13")
+        }
+        
+        
+    </script>
+</body>
