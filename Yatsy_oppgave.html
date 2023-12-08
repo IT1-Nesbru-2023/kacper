@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy Terningkast Simulator</title>
+    <link rel="stylesheet" href="Yatsy.css">
+</head>
+
+<body onload="visTerninger()">
+    <div class="svart firkant 1">
+        <h2 id="h2Terning1">terning 1:</h2>
+        <h2 id="verdi1">0</h2>
+        <h2>terning 2:</h2>
+        <h2 id="verdi2">0</h2>
+        <h2>terning 3:</h2>
+        <h2 id="verdi3">0</h2>
+        <h2>terning 4:</h2>
+        <h2 id="verdi4">0</h2>
+        <h2>terning 5:</h2>
+        <h2 id="verdi5">0</h2>
+    </div>
+    <h1>yatzy</h1>
+    <button onclick="KastPåNytt()">Kast På Nytt</button>
+
+    <div class="spill_brett">
+        <div class="spill_tall">
+            <div id="1" class="tall"></div>
+            <div id="2" class="tall"></div>
+            <div id="3" class="tall"></div>
+            <div id="4" class="tall"></div>
+            <div id="5" class="tall"></div>
+        </div>
+
+    </div>
+
+    <table id="scoreTable">
+        <colgroup>
+            <col span="1">
+            <col span="1">
+            <col span="1">
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>Kast</td>
+                <td>Du</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td id="enere">ener</td>
+                <td id="resultatEnere"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="toere">toere</td>
+                <td id="resultatToere"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="treere">treere</td>
+                <td id="resultatTreere"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="firere">firere</td>
+                <td id="resultatfirere"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="femmere">femmere</td>
+                <td id="resultatfemmere"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="seksere">seksere</td>
+                <td id="resultatseksere"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="sum">sum</td>
+                <td id="totalSum"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>bonus</td>
+                <td id="bonus"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ett par</td>
+                <td id="resultatEttPar"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>to par</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tre like</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>fire like</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>fullt hus</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>liten straight</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>stor straight</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>sjansespill</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>yahtzee</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>total poengsum</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+
+        <script>
+            let terning1 = 0;
+            let terning2 = 0;
+            let terning3 = 0;
+            let terning4 = 0;
+            let terning5 = 0;
+            let verdi1 = document.getElementById("verdi1")
+            let verdi2 = document.getElementById("verdi2")
+            let verdi3 = document.getElementById("verdi3")
+            let verdi4 = document.getElementById("verdi4")
+            let verdi5 = document.getElementById("verdi5")
+            let enere = document.getElementById("enere")
+            let sum = document.getElementById("sum")
+            let h2Terning1 = document.getElementById("h2Terning1")
+            let stopp1 = false;
+
+            h2Terning1.onclick = lagreTernig1;
+
+            function lagreTernig1() {
+                if (stopp1) {
+                    let lagretTerning1 = terning1;
+                    stopp1 = true;
+                }
+            }
+
+            function terningkast() {
+                return Math.ceil(Math.random() * 6);
+            }
+            function visTerninger() {
+                terning1 = terningkast();
+                terning2 = terningkast();
+                terning3 = terningkast();
+                terning4 = terningkast();
+                terning5 = terningkast();
+
+
+                verdi1.innerHTML = String(terning1);
+                verdi2.innerHTML = String(terning2);
+                verdi3.innerHTML = String(terning3);
+                verdi4.innerHTML = String(terning4);
+                verdi5.innerHTML = String(terning5);
+            }
+            function KastPåNytt() {
+                visTerninger();
+            }
+            enere.onclick = vurdereEnere;
+            function vurdereEnere() {
+                let sum = 0;
+                if (terning1 == 1) {
+                    sum = sum + 1;
+                }
+                if (terning2 == 1) {
+                    sum = sum + 1;
+                }
+                if (terning3 == 1) {
+                    sum = sum + 1;
+                }
+                if (terning4 == 1) {
+                    sum = sum + 1;
+                }
+                if (terning5 == 1) {
+                    sum = sum + 1;
+                }
+                document.getElementById("resultatEnere").innerText = sum;
+            }
+            toere.onclick = vurdereToere;
+            function vurdereToere() {
+                let sum = 0
+                if (terning1 == 2) {
+                    sum = sum + 2;
+                }
+                if (terning2 == 2) {
+                    sum = sum + 2;
+                }
+                if (terning3 == 2) {
+                    sum = sum + 2;
+                }
+                if (terning4 == 2) {
+                    sum = sum + 2;
+                }
+                if (terning5 == 2) {
+                    sum = sum + 2;
+                }
+                document.getElementById("resultatToere").innerText = sum;
+
+            }
+            treere.onclick = vurderTreere;
+            function vurderTreere() {
+                let sum = 0
+                if (terning1 == 3) {
+                    sum = sum + 3;
+                }
+                if (terning2 == 3) {
+                    sum = sum + 3;
+                }
+                if (terning3 == 3) {
+                    sum = sum + 3;
+                }
+                if (terning4 == 3) {
+                    sum = sum + 3;
+                }
+                if (terning5 == 3) {
+                    sum = sum + 3;
+                }
+                document.getElementById("resultatTreere").innerText = sum;
+            }
+            firere.onclick = vurderFirere;
+            function vurderFirere() {
+                let sum = 0
+                if (terning1 == 4) {
+                    sum = sum + 4;
+                }
+                if (terning2 == 4) {
+                    sum = sum + 4;
+                }
+                if (terning3 == 4) {
+                    sum = sum + 4;
+                }
+                if (terning4 == 4) {
+                    sum = sum + 4;
+                }
+                if (terning5 == 4) {
+                    sum = sum + 4;
+                }
+                document.getElementById("resultatfirere").innerText = sum;
+            }
+            femmere.onclick = vurderfemmere;
+            function vurderfemmere() {
+                let sum = 0
+                if (terning1 == 5) {
+                    sum = sum + 5;
+                }
+                if (terning2 == 5) {
+                    sum = sum + 5;
+                }
+                if (terning3 == 5) {
+                    sum = sum + 5;
+                }
+                if (terning4 == 5) {
+                    sum = sum + 5;
+                }
+                if (terning5 == 5) {
+                    sum = sum + 5;
+                }
+                document.getElementById("resultatfemmere").innerText = sum;
+            }
+            seksere.onclick = vurderseksere;
+            function vurderseksere() {
+                let sum = 0
+                if (terning1 == 6) {
+                    sum = sum + 6;
+                }
+                if (terning2 == 6) {
+                    sum = sum + 6;
+                }
+                if (terning3 == 6) {
+                    sum = sum + 6;
+                }
+                if (terning4 == 6) {
+                    sum = sum + 6;
+                }
+                if (terning5 == 6) {
+                    sum = sum + 6;
+                }
+                document.getElementById("resultatseksere").innerText = sum;
+            }
+            sum.onclick = vurderTotalSum;
+            function vurderTotalSum() {
+                let totalSum =
+                    parseInt(document.getElementById("resultatEnere").innerText) +
+                    parseInt(document.getElementById("resultatToere").innerText) +
+                    parseInt(document.getElementById("resultatTreere").innerText) +
+                    parseInt(document.getElementById("resultatfirere").innerText) +
+                    parseInt(document.getElementById("resultatfemmere").innerText) +
+                    parseInt(document.getElementById("resultatseksere").innerText);
+
+                let bonus = 0;
+                document.getElementById("totalSum").innerText = sum
+                if (totalSum >= 63) {
+                    bonus = 50;
+                    document.getElementById("bonus").innerText = bonus;
+                }
+
+                document.getElementById("totalSum").innerText = totalSum + bonus;
+            }
+
+
+
+        </script>
+</body>
+
+</html>

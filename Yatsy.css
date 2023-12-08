@@ -1,0 +1,72 @@
+
+body, h1, p, table {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+.svart.firkant {
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+
+.tall {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+#scoreTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#scoreTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+
+#scoreTable tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+
+#scoreTable td:first-child {
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    .tall {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+}
+h2 {
+display: inline;
+
+}
