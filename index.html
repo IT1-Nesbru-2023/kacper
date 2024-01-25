@@ -4,50 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Kacper Bogucki - Oppgaver</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
         h1 {
-            font-family: cursive;
-            color: rgb(34, 34, 199);
-            margin-left: 430px;
-            font-size: xx-large;
+            
+            color: rgb(56, 56, 56);
+            background-color: rgb(8, 174, 168);
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
 
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
 
+        th, td {
+            padding: 4px;
+            text-align: center;
+            border: 0px solid #ddd;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         button {
-            color: rgb(200, 196, 94);
-            font-size: x-large;
-            font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
-            padding: 30px;
-            margin-left: 10px;
-            border-radius: 40%;
-            background-color: black;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
-        body {
-            background: radial-gradient(circle, rgb(104, 228, 32), rgb(10, 24, 97));
-
-
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
-    <h1>Kacper Bogucki sine ekstremt kule oppgaver</h1>
-    <a href="Innleverings_oppgave_IT1.html"><button>Innleverings_oppgave_IT1</button></a>
-    <a href="F1.html"><button>F1 Informasjon</button></a>
-    <a href="grid.html"><button>Grid forsøk</button></a>
-    <a href="olympiske.html"><button>olympiske ringer</button></a>
-    <a href="oppgave til timen 31 august.html"><button>oppgave 31 august</button></a>
-    <a href="CSS_lekeplass.html"><button> css_lekeplass</button></a>
-    <a href="knutinterview_.html"><button>knut interview</button></a>
-    <a href="2index.html"><button>første index/innleverings oppgaven </button></a>
-    <a href="Passord.html"><button> Gjett Det riktige passordet</button></a>
-    <a href="tilfeldige_tall.html"><button>Tilfeldige Tall</button></a>
-    <a href="terning_resultat.html"><button>simulering av 1000 terning kast</button></a>
-    <a href="Yatsy_oppgave.html"><button>yatsy</button></a>
+    <h1>Kacper Bogucki's Ekstremt Kule Oppgaver</h1>
+    <table>
+        <tr>
+            <td><a href="Innleverings_oppgave_IT1.html"><button>Innleverings_oppgave_IT1</button></a></td>
+            <td><a href="F1.html"><button>F1 Informasjon</button></a></td>
+            <td><a href="grid.html"><button>Grid forsøk</button></a></td>
+            <td><a href="olympiske.html"><button>Olympiske Ringer</button></a></td>
+        </tr>
+        <tr>
+            <td><a href="oppgave_til_timen_31_august.html"><button>Oppgave 31. august</button></a></td>
+            <td><a href="CSS_lekeplass.html"><button>CSS Lekeplass</button></a></td>
+            <td><a href="knutinterview.html"><button>Knut Interview</button></a></td>
+            <td><a href="2index.html"><button>Første Index/Innleveringsoppgaven</button></a></td>
+        </tr>
+        <tr>
+            <td><a href="Passord.html"><button>Gjett Det Riktige Passordet</button></a></td>
+            <td><a href="tilfeldige_tall.html"><button>Tilfeldige Tall</button></a></td>
+            <td><a href="terning_resultat.html"><button>Simulering av 1000 Terningkast</button></a></td>
+            <td><a href="Yatsy_oppgave.html"><button>Yatsy</button></a></td>
+        </tr>
+    </table>
 </body>
 
 </html>
