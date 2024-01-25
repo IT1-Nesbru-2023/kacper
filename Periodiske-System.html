@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Legger til litt mellomrom over tabellen */
+}
+
+th, td {
+    border: 1px solid #dcdcdc;
+    padding: 10px; /* Øker padding for bedre lesbarhet */
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold; /* Legger til fet skrift for overskrifter */
+}
+
+td.element {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+td.colspan-10, td.colspan-6, td.colspan-2 {
+    background-color: #f2f2f2;
+}
+
+/* Legger til hover-effekt på tabellceller for bedre brukerinteraksjon */
+td:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Stiler for mobilvisning */
+@media (max-width: 600px) {
+    th, td {
+        padding: 8px; /* Justerer padding for bedre mobilvisning */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="element">H<br>1.008</td>
+                <td class="element">He<br>4.003</td>
+                <td colspan="10"></td>
+                <td class="element">Li<br>6.941</td>
+                <td class="element">Be<br>9.012</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="element">B<br>10.81</td>
+                <td class="element">C<br>12.01</td>
+                <td colspan="10"></td>
+                <td class="element">N<br>14.01</td>
+                <td class="element">O<br>16.00</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>3-12</td>
+                <td colspan="10"></td>
+                <td class="element">F<br>19.00</td>
+                <td class="element">Ne<br>20.18</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td class="element">Na<br>22.99</td>
+                <td class="element">Mg<br>24.31</td>
+                <td colspan="10"></td>
+                <td class="element">Al<br>26.98</td>
+                <td class="element">Si<br>28.09</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td class="element">P<br>30.97</td>
+                <td class="element">S<br>32.07</td>
+                <td colspan="10"></td>
+                <td class="element">Cl<br>35.45</td>
+                <td class="element">Ar<br>39.95</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td class="element">K<br>39.10</td>
+                <td class="element">Ca<br>40.08</td>
+                <td class="element">Sc<br>44.96</td>
+                <td class="element">Ti<br>47.87</td>
+                <td class="element">V<br>50.94</td>
+                <td class="element">Cr<br>52.00</td>
+                <td class="element">Mn<br>54.94</td>
+                <td class="element">Fe<br>55.85</td>
+                <td class="element">Co<br>58.93</td>
+                <td class="element">Ni<br>58.69</td>
+                <td class="element">Cu<br>63.55</td>
+                <td class="element">Zn<br>65.38</td>
+                <td class="element">Ga<br>69.72</td>
+                <td class="element">Ge<br>72.63</td>
+                <td class="element">As<br>74.92</td>
+                <td class="element">Se<br>78.96</td>
+                <td class="element">Br<br>79.90</td>
+                <td class="element">Kr<br>83.80</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td class="element">Rb<br>85.47</td>
+                <td class="element">Sr<br>87.62</td>
+                <td class="element">Y<br>88.91</td>
+                <td class="element">Zr<br>91.22</td>
+                <td class="element">Nb<br>92.91</td>
+                <td class="element">Mo<br>95.94</td>
+                <td class="element">Tc<br>98.00</td>
+                <td class="element">Ru<br>101.07</td>
+                <td class="element">Rh<br>102.91</td>
+                <td class="element">Pd<br>106.42</td>
+                <td class="element">Ag<br>107.87</td>
+                <td class="element">Cd<br>112.41</td>
+                <td class="element">In<br>114.82</td>
+                <td class="element">Sn<br>118.71</td>
+                <td class="element">Sb<br>121.76</td>
+                <td class="element">Te<br>127.60</td>
+                <td class="element">I<br>126.90</td>
+                <td class="element">Xe<br>131.29</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td class="element">Cs<br>132.91</td>
+                <td class="element">Ba<br>137.33</td>
+                <td colspan="10"></td>
+                <td class="element">La<br>138.91</td>
+                <td class="element">Ce<br>140.12</td>
+                <td class="element">Pr<br>140.91</td>
+                <td class="element">Nd<br>144.24</td>
+                <td class="element">Pm<br>145.00</td>
+                <td class="element">Sm<br>150.36</td>
+                <td class="element">Eu<br>151.96</td>
+                <td class="element">Gd<br>157.25</td>
+                <td class="element">Tb<br>158.93</td>
+                <td class="element">Dy<br>162.50</td>
+                <td class="element">Ho<br>164.93</td>
+                <td class="element">Er<br>167.26</td>
+                <td class="element">Tm<br>168.93</td>
+                <td class="element">Yb<br>173.04</td>
+                <td class="element">Lu<br>174.97</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td class="element">Hf<br>178.49</td>
+                <td class="element">Ta<br>180.95</td>
+                <td class="element">W<br>183.84</td>
+                <td class="element">Re<br>186.21</td>
+                <td class="element">Os<br>190.23</td>
+                <td class="element">Ir<br>192.22</td>
+                <td class="element">Pt<br>195.08</td>
+                <td class="element">Au<br>196.97</td>
+                <td class="element">Hg<br>200.59</td>
+                <td class="element">Tl<br>204.38</td>
+                <td class="element">Pb<br>207.2</td>
+                <td class="element">Bi<br>208.98</td>
+                <td class="element">Th<br>232.04</td>
+                <td class="element">Pa<br>231.04</td>
+                <td class="element">U<br>238.03</td>
+                <td class="element">Np<br>237.00</td>
+                <td class="element">Pu<br>244.00</td>
+                <td class="element">Am<br>243.00</td>
+                <td class="element">Cm<br>247.00</td>
+            </tr>
+
+</body>
+
+</html>
