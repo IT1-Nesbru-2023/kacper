@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visittkort maskin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        #form-container,
+        #output-container {
+            width: 48%;
+        }
+
+        #form-container {
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            padding: 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #form-container h2 {
+            margin-top: 0;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: calc(100% - 10px);
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px 0 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        input[type="file"],
+        input[type="color"] {
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #output-container {
+            background-color: #f2f3f4;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        #output-container div {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #output-container div img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Visittkort maskin</h1>
+    <div id="container">
+        <div id="form-container">
+            <h2>Utfyllingsskjema</h2>
+            <form id="visittkort-form">
+                <input type="text" id="Navn" placeholder="Navn">
+                <select id="Kjønn">
+                    <option hidden disabled selected value>-- Velg kjønn --</option>
+                    <option value="Mann">Mann</option>
+                    <option value="Kvinne">Kvinne</option>
+                </select>
+                <input type="text" id="Stilling" placeholder="Stilling">
+                <input type="number" id="Telefonnummer" placeholder="Telefonnummer" maxlength="8">
+                <select id="Førekort">
+                    <option hidden disabled selected value>-- Har førerkort? --</option>
+                    <option value="Nei">Nei</option>
+                    <option value="Ja">Ja</option>
+                </select>
+                <input type="date" id="Fødselsdag">
+                <input type="file" id="bilde">
+                <input type="color" id="kort_farge" value="#ffffff">
+                <select id="ramme">
+                    <option hidden disabled selected value>-- Velg ramme --</option>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="none">none</option>
+                </select>
+                <input type="submit" value="Generer visittkort">
+            </form>
+        </div>
+
+        <div id="output-container"></div>
+    </div>
+
+    <script>
+        document.getElementById('visittkort-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const navn = document.getElementById('Navn').value;
+            const kjønn = document.getElementById('Kjønn').value;
+            const stilling = document.getElementById('Stilling').value;
+            const telefonnummer = document.getElementById('Telefonnummer').value;
+            const førerkort = document.getElementById('Førekort').value;
+            const fødselsdag = document.getElementById('Fødselsdag').value;
+            const bilde = document.getElementById('bilde').files[0];
+            const kort_farge = document.getElementById('kort_farge').value;
+            const ramme = document.getElementById('ramme').value;
+
+            if (telefonnummer.length !== 8) {
+            alert("Du må skrive inn nøyaktig 8 siffer for telefonnummeret.");
+            return;
+        }
+
+            const kort_output = document.createElement('div');
+            kort_output.innerHTML = `
+                <p>Navn: ${navn}</p>
+                <p>Kjønn: ${kjønn}</p>
+                <p>Stilling: ${stilling}</p>
+                <p>Telefonnummer: ${telefonnummer}</p>
+                <p>Førerkort: ${førerkort}</p>
+                <p>Fødselsdag: ${fødselsdag}</p>
+                <img src="${URL.createObjectURL(bilde)}" alt="Bilde">
+            `;
+            kort_output.style.backgroundColor = kort_farge;
+            kort_output.style.border = `2px ${ramme} #000`;
+
+            document.getElementById('output-container').appendChild(kort_output);
+        });
+    </script>
+</body>
+
+</html>
