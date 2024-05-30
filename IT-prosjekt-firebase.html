@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>Mine sanger</h1>
+    <input id="inpTekst1" type="text" placeholder="Sangtittel">
+    <input id="inpTekst2" type="text" placeholder="Artist">
+    <button id="btnOK" class="ok">Legg til</button>
+    <div id="firebaseInnhold"></div>
+
+    <script type="module">
+        // Lager variabler av eksisterende HTML-elementer
+        let inpTekst1 = document.getElementById("inpTekst1");
+        let inpTekst2 = document.getElementById("inpTekst2");
+        let btnOK = document.getElementById("btnOK");
+        let firebaseInnhold = document.getElementById("firebaseInnhold");
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        import { getFirestore, query, collection, getDoc, getDocs, doc, addDoc, updateDoc, deleteDoc, onSnapshot, orderBy, where, limit } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        const firebaseConfig = {
+            apiKey: "AIzaSyCOhi3IsY3ipoTAGTTnRWZ3TIgiR7vVDz4",
+            authDomain: "it-prosjekt-firebase.firebaseapp.com",
+            projectId: "it-prosjekt-firebase",
+            storageBucket: "it-prosjekt-firebase.appspot.com",
+            messagingSenderId: "881224747711",
+            appId: "1:881224747711:web:b93ca60c83fa66832a940a"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Legger til lytter på knappen
+        btnOK.addEventListener("click", skrivTilFirebase);
+        async function skrivTilFirebase() {
+            if (inpTekst1.value == "" || inpTekst2.value == "") {
+                alert("du må skrive noe...");
+                return;
+            }
+
+            // Skriv dataene i Firebase
+            await addDoc(collection(db, "sang"), {
+                tittel: inpTekst1.value,
+                artist: inpTekst2.value
+            });
+
+            //Tøm inputfeltene
+            inpTekst1.value = ""; inpTekst2.value = "";
+        }
+
+        // Spørring som henter hele kolleksjonen "sang" i databasen
+        const q = query(collection(db, "sang"));
+
+        // Oppdaterer HTML-siden ved endringer i databasen OG ved oppstart
+        onSnapshot(q, (sangDokumenter) => {
+            // For hver gang nye ting legges til i db: Slett alt!
+            firebaseInnhold.innerHTML = "";
+
+            // Spinner gjennom alle elementene i database-tabellen
+            sangDokumenter.forEach(skrivSang);
+        });
+
+        //Skriv ut hvert enkelt dokument fra databasen
+        function skrivSang(dok) {
+            firebaseInnhold.innerHTML += "<br><b>Tittel: </b>" + dok.data().tittel + ", <b>Artist:</b>" + dok.data().artist;
+        };
+
+        //Slett et bestemt dokument, krever at du har tatt vare på dokumentID når du hentet dataene
+        await deleteDoc(doc(db, "sang", "VJpKD07jtedGhUFjGHJU"));
+
+    </script>
+</body>
+
+</html>
